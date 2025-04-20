@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gitea
+  namespace: argocd
+spec:
+  project: default
+  destination:
+    namespace: gitea
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://dl.gitea.com/charts
+    chart: gitea
+    targetRevision: 11.0.1
+    helm:
+      valueFiles:
+        - values-ingress.yaml

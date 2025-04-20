@@ -1,0 +1,20 @@
+ingress:
+  enabled: true
+  className: traefik
+  hosts:
+    - host: argocd.local
+      paths:
+        - path: /
+          pathType: Prefix
+  service:
+    port: 8081
+  tls: []
+service:
+  http:
+    type: ClusterIP
+    port: 8081
+  ssh:
+    type: ClusterIP
+persistence:
+  enabled: true
+  size: 1Gi
