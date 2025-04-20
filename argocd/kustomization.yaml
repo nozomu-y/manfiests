@@ -5,6 +5,8 @@ namespace: argocd
 
 resources:
   - https://github.com/argoproj/argo-cd/raw/refs/tags/v2.14.10/manifests/install.yaml
+  - base/argocd-ui-ingress.yaml
 
 patches:
+  - path: overlays/production/argocd-cmd-params-cm-patch.yaml
   - path: overlays/production/argocd-server-service.yaml
