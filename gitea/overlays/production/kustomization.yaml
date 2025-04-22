@@ -4,7 +4,11 @@ kind: Kustomization
 namespace: gitea
 
 resources:
-  - ../../base
+  - deployment.yaml
+  - ingress.yaml
+  - pvc.yaml
+  - service.yaml
 
-patches:
-  - path: app.yaml
+
+# patches:
+#   - path: app.yaml
