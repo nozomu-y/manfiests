@@ -4,4 +4,6 @@ kind: Kustomization
 namespace: gitea
 
 resources:
-  - app.yaml
+  - deployment.yaml
+  - pvc.yaml
+  - service.yaml
