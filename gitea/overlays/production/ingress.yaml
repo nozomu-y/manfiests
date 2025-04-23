@@ -5,9 +5,9 @@ metadata:
   namespace: gitea
 spec:
   entryPoints:
-    - web
+    - websecure
   routes:
-    - match: Host(`gitea.local`)
+    - match: Host(`gitea.nozomu.dev`)
       kind: Rule
       services:
         - name: gitea
