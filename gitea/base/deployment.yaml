@@ -24,6 +24,13 @@ spec:
           volumeMounts:
             - name: gitea-data
               mountPath: /data
+          env:
+            - name: GITEA__server__DOMAIN
+              value: gitea.nozomu.dev
+            - name: GITEA__server__HTTP_PORT
+              value: "3000"
+            - name: GITEA__server__ROOT_URL
+              value: https://gitea.nozomu.dev
       volumes:
         - name: gitea-data
           persistentVolumeClaim:
